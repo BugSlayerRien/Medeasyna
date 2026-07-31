@@ -1,0 +1,190 @@
+/* mark_ready.css */
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;500;600;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Century Gothic', sans-serif;
+    background-color: #f5f7fa;
+    color: #2d3748;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    height: 100%;
+
+}
+
+
+main {
+    flex: 1 0 auto;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #2b6cb0;
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #ebf8ff;
+    padding-bottom: 10px;
+}
+
+/* Messages */
+.success, .error {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    font-weight: 500;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success {
+    background-color: #f0fff4;
+    border-left: 4px solid #48bb78;
+    color: #2f855a;
+}
+
+.error {
+    background-color: #fff5f5;
+    border-left: 4px solid #f56565;
+    color: #c53030;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+th {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s ease;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background-color: #ebf8ff;
+}
+
+/* Status Column */
+td:nth-child(4) {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Button Styles */
+button {
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Century Gothic', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #718096;
+    font-size: 1.1rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.app-footer {
+    position: relative;
+    bottom: -390px;
+}
+
+/* Form Animation */
+form {
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    th, td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Button Press Effect */
+button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+/* Row Highlight Animation */
+@keyframes highlightRow {
+    0% { background-color: rgba(66, 153, 225, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.highlight {
+    animation: highlightRow 1.5s ease-out;
+}
+.copyright {
+    color: white;
+}

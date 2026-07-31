@@ -1,0 +1,170 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('availabilityForm');
+    const dateInput = document.getElementById('availableDate');
+    const startTimeInput = document.getElementById('startTime');
+    const endTimeInput = document.getElementById('endTime');
+    const duration = parseInt(document.getElementById('appointmentDuration').value) || 30;
+    
+    // Initialize time inputs step based on appointment duration
+    startTimeInput.step = duration * 60;
+    endTimeInput.step = duration * 60;
+    
+    // Date change handler
+    dateInput.addEventListener('change', function() {
+        validateDate();
+        validateTimes();
+    });
+    
+    // Time change handlers
+    startTimeInput.addEventListener('change', function() {
+        validateStartTime();
+        validateEndTime();
+    });
+    
+    endTimeInput.addEventListener('change', function() {
+        validateEndTime();
+    });
+    
+    // Form submission handler
+    form.addEventListener('submit', function(e) {
+        if (!validateForm()) {
+            e.preventDefault();
+        }
+    });
+    
+    function validateDate() {
+        const errorElement = document.getElementById('dateError');
+        const selectedDate = new Date(dateInput.value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        // Reset error
+        errorElement.textContent = '';
+        dateInput.classList.remove('input-error');
+        
+        if (isNaN(selectedDate.getTime())) {
+            errorElement.textContent = 'Please select a valid date';
+            dateInput.classList.add('input-error');
+            return false;
+        }
+        
+        if (selectedDate < today) {
+            errorElement.textContent = 'Date cannot be in the past';
+            dateInput.classList.add('input-error');
+            return false;
+        }
+        
+        // Check if date is a weekend
+        if (selectedDate.getDay() === 0 || selectedDate.getDay() === 6) {
+            errorElement.textContent = 'Clinic is closed on weekends';
+            dateInput.classList.add('input-error');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function validateStartTime() {
+        const errorElement = document.getElementById('startTimeError');
+        const time = startTimeInput.value;
+        
+        // Reset error
+        errorElement.textContent = '';
+        startTimeInput.classList.remove('input-error');
+        
+        if (!time) return false;
+        
+        const [hours, minutes] = time.split(':').map(Number);
+        const totalMinutes = (hours * 60) + minutes;
+        
+        // Check working hours (9AM-5PM)
+        if (totalMinutes < 540 || totalMinutes >= 1020) { // 9AM (540) to 5PM (1020)
+            errorElement.textContent = 'Start time must be between 9:00 AM and 5:00 PM';
+            startTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        // Check time interval
+        if (minutes % duration !== 0) {
+            errorElement.textContent = `Start time must be in ${duration}-minute intervals`;
+            startTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function validateEndTime() {
+        const errorElement = document.getElementById('endTimeError');
+        const startTime = startTimeInput.value;
+        const endTime = endTimeInput.value;
+        
+        // Reset error
+        errorElement.textContent = '';
+        endTimeInput.classList.remove('input-error');
+        
+        if (!startTime || !endTime) return false;
+        
+        const [startHours, startMins] = startTime.split(':').map(Number);
+        const [endHours, endMins] = endTime.split(':').map(Number);
+        
+        const startTotal = (startHours * 60) + startMins;
+        const endTotal = (endHours * 60) + endMins;
+        
+        // Validate time interval
+        if (endMins % duration !== 0) {
+            errorElement.textContent = `End time must be in ${duration}-minute intervals`;
+            endTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        // Validate time range
+        if (endTotal <= startTotal) {
+            errorElement.textContent = 'End time must be after start time';
+            endTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        // Minimum appointment block (at least one appointment duration)
+        if ((endTotal - startTotal) < duration) {
+            errorElement.textContent = `Time block must be at least ${duration} minutes`;
+            endTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        // Check working hours
+        if (endTotal > 1020) { // 5PM (1020)
+            errorElement.textContent = 'Clinic closes at 5:00 PM';
+            endTimeInput.classList.add('input-error');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    function validateTimes() {
+        const isStartValid = validateStartTime();
+        const isEndValid = validateEndTime();
+        return isStartValid && isEndValid;
+    }
+    
+    function validateForm() {
+        const isDateValid = validateDate();
+        const isTimesValid = validateTimes();
+        
+        return isDateValid && isTimesValid;
+    }
+    
+    // Real-time validation for time inputs
+    startTimeInput.addEventListener('input', function() {
+        if (this.value && endTimeInput.value) {
+            validateEndTime();
+        }
+    });
+    
+    endTimeInput.addEventListener('input', function() {
+        if (this.value && startTimeInput.value) {
+            validateEndTime();
+        }
+    });
+});

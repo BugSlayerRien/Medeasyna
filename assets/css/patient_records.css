@@ -1,0 +1,235 @@
+/* patient-records-content.css */
+
+/* ===== Variables ===== */
+:root {
+    --primary-color: #1a3e72;
+    --secondary-color: #254b8e;
+    --accent-color: #4a89dc;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --dark-gray: #6c757d;
+    --text-color: #2c3e50;
+  }
+  
+  /* ===== Main Layout ===== */
+  body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    color: var(--primary-color);
+    margin: 2rem 1.5rem 1rem;
+    font-size: 1.8rem;
+    animation: fadeIn 0.6s ease;
+  }
+  .copyright {
+    color: white;
+}
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* ===== Search Form ===== */
+  form[method="GET"] {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1rem 1.5rem 2rem;
+    animation: slideInDown 0.6s ease;
+  }
+  
+  @keyframes slideInDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(74, 137, 220, 0.2);
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ===== Patient Table ===== */
+  table {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 2rem;
+    border-collapse: collapse;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+  }
+  
+  tr {
+    transition: all 0.3s ease;
+  }
+  
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  tr:hover {
+    background-color: rgba(74, 137, 220, 0.05);
+    transform: translateX(2px);
+  }
+  
+  /* ===== Action Buttons ===== */
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ===== Empty State ===== */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--dark-gray);
+    animation: fadeIn 0.6s ease;
+  }
+  
+  .empty-state p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  /* ===== Animations for Table Rows ===== */
+  tbody tr {
+    opacity: 0;
+    animation: fadeInRow 0.5s ease forwards;
+  }
+  
+  @keyframes fadeInRow {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Staggered animations */
+  tbody tr:nth-child(1) { animation-delay: 0.1s; }
+  tbody tr:nth-child(2) { animation-delay: 0.2s; }
+  tbody tr:nth-child(3) { animation-delay: 0.3s; }
+  tbody tr:nth-child(4) { animation-delay: 0.4s; }
+  tbody tr:nth-child(5) { animation-delay: 0.5s; }
+  tbody tr:nth-child(6) { animation-delay: 0.6s; }
+  
+  /* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    table {
+      width: calc(100% - 2rem);
+      margin: 0 1rem 2rem;
+      display: block;
+      overflow-x: auto;
+    }
+    
+    form[method="GET"] {
+      margin: 1rem 1rem 2rem;
+      flex-direction: column;
+    }
+    
+    input[type="text"] {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.5rem;
+      margin: 1.5rem 1rem 1rem;
+    }
+    
+    th, td {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+    
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.8rem;
+    }
+    .app-footer {
+      position: relative;
+      bottom: -300px;
+  }
+  }

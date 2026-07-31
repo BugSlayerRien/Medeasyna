@@ -1,0 +1,263 @@
+/* appointments-content.css - Styles for Patient Appointments Page */
+
+/* ===== Variables ===== */
+:root {
+    --primary-color: #1a3e72;
+    --secondary-color: #254b8e;
+    --accent-color: #4a89dc;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #ddd;
+    --dark-gray: #666;
+}
+
+/* ===== Main Container ===== */
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin: 2rem 0 1.5rem;
+    padding: 0 1.5rem;
+    font-size: 1.8rem;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== Message Alerts ===== */
+.message-alert {
+    padding: 1rem 1.5rem;
+    margin: 1rem 1.5rem;
+    border-radius: 6px;
+    animation: slideDown 0.4s ease forwards;
+    display: flex;
+    align-items: center;
+}
+.copyright {
+    color: white;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.message-alert.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid var(--success-color);
+    color: var(--success-color);
+}
+
+.message-alert.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid var(--error-color);
+    color: var(--error-color);
+}
+
+.message-alert i {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+/* ===== Appointments Table ===== */
+table {
+    width: calc(100% - 3rem);
+    margin: 1rem 1.5rem 2rem;
+    border-collapse: collapse;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from { 
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+}
+
+tr {
+    transition: all 0.3s ease;
+}
+
+tr:not(:last-child) {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+tr:hover {
+    background-color: rgba(74, 137, 220, 0.05);
+    transform: translateX(2px);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-badge.scheduled {
+    background-color: rgba(74, 137, 220, 0.1);
+    color: var(--accent-color);
+}
+
+.status-badge.completed {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.status-badge.cancelled {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--error-color);
+}
+
+/* Action Buttons */
+.action-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.action-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+button[type="submit"]:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--dark-gray);
+    animation: fadeIn 0.6s ease;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--medium-gray);
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    th, td {
+        padding: 0.8rem;
+    }
+    
+    .action-btn, button[type="submit"] {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .message-alert {
+        margin: 1rem 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    table {
+        width: calc(100% - 2rem);
+        margin: 1rem 1rem 2rem;
+    }
+    
+    th, td {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation for table rows */
+tr {
+    animation: fadeInRow 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInRow {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Staggered row animations */
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.2s; }
+tr:nth-child(3) { animation-delay: 0.3s; }
+tr:nth-child(4) { animation-delay: 0.4s; }
+tr:nth-child(5) { animation-delay: 0.5s; }
+tr:nth-child(6) { animation-delay: 0.6s; }

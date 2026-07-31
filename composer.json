@@ -1,0 +1,10 @@
+{
+    "name": "your-username/your-project-name",
+    "description": "A short description of your project",
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "google/apiclient": "^2.0"
+    },
+    "version": "1.0.0"
+}
+

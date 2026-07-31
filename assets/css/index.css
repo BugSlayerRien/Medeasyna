@@ -1,0 +1,191 @@
+/* home-content.css - Styles for Homepage Content Only */
+
+/* ===== Hero Section ===== */
+.hero {
+    background: linear-gradient(135deg, #1a3e72 0%, #2c5282 100%);
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.trusted {
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+    background-size: cover;
+    animation: pulseBackground 15s infinite alternate;
+}
+
+@keyframes pulseBackground {
+    0% { transform: scale(1); opacity: 0.05; }
+    100% { transform: scale(1.2); opacity: 0.1; }
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: fadeInDown 1s ease;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    position: relative;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 0.9; transform: translateY(0); }
+}
+
+/* ===== Services Grid ===== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+}
+
+.service-box {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.service-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-box:hover::before {
+    transform: scaleX(1);
+}
+
+.service-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-box:hover h3 {
+    color: var(--accent-color);
+}
+
+.service-box p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ===== Service Icons (using pseudo-elements) ===== */
+.service-box {
+    position: relative;
+    padding-top: 4rem;
+}
+
+.service-box::after {
+    content: '';
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.copyright {
+    color: white;
+}
+
+
+/* Add more icons for other services as needed */
+
+.service-box:hover::after {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+}
+
+/* ===== Staggered Animation for Service Boxes ===== */
+.service-box {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.service-box:nth-child(1) { animation-delay: 0.1s; }
+.service-box:nth-child(2) { animation-delay: 0.2s; }
+.service-box:nth-child(3) { animation-delay: 0.3s; }
+.service-box:nth-child(4) { animation-delay: 0.4s; }
+.service-box:nth-child(5) { animation-delay: 0.5s; }
+.service-box:nth-child(6) { animation-delay: 0.6s; }
+.service-box:nth-child(7) { animation-delay: 0.7s; }
+.service-box:nth-child(8) { animation-delay: 0.8s; }
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+}

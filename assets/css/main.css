@@ -1,0 +1,300 @@
+/* main.css - Global Styles for Doval Santos Diagnostic Center */
+
+/* ===== Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* ===== Color Theme ===== */
+:root {
+    --primary-color: #1a3e72;       /* Dark blue */
+    --secondary-color: #2c5282;     /* Medium blue */
+    --accent-color: #4a89dc;        /* Light blue */
+    --light-color: #f8fafc;         /* Off-white */
+    --dark-color: #1a202c;          /* Dark text */
+    --success-color: #38a169;       /* Green */
+    --warning-color: #dd6b20;       /* Orange */
+    --danger-color: #e53e3e;        /* Red */
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* ===== Layout Components ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Header/Navbar ===== */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.navbar div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a.active {
+    font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.copyright {
+    color: white;
+}
+
+/* ===== Dashboard Content ===== */
+.dashboard-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.dashboard-section {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Appointment Cards ===== */
+.appointment-card {
+    border-left: 4px solid var(--accent-color);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    background: var(--light-color);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.appointment-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+    font-size: 0.9rem;
+}
+
+.appointment-date {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.appointment-time {
+    color: #666;
+}
+
+/* ===== Buttons ===== */
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin-right: 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button.primary {
+    background: var(--accent-color);
+    color: white;
+    border: 1px solid var(--accent-color);
+}
+
+.button.primary:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.button.cancel {
+    background: transparent;
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+
+.button.cancel:hover {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* ===== No Appointments State ===== */
+.no-appointments {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+/* ===== Notifications ===== */
+.notification-preview {
+    background: var(--light-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    border-left: 3px solid var(--accent-color);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.notification-preview p {
+    margin-bottom: 0.5rem;
+}
+
+.notification-preview small {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* ===== View All Link ===== */
+.see-more-link {
+    text-align: right;
+}
+
+.see-more-link a {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse:hover {
+    animation: pulse 1.5s infinite;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .navbar div {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .appointment-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,438 @@
+
+:root {
+    --primary: #007BFF;
+    --primary-light: #e6ebff;
+    --primary-dark: #3a56cc;
+    --secondary: #6c757d;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --danger: #ff5a5f;
+    --success: #28a745;
+    --warning: #ffc107;
+    --white: #ffffff;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Century Gothic', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f5f7ff;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary), #007BFF);
+    color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.navbar div {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+.navbar a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover:after,
+.navbar a.active:after {
+    width: 100%;
+}
+
+.navbar a.active {
+    font-weight: 600;
+}
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), #3a56cc);
+    border-radius: 2px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.dashboard-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    color: var(--dark);
+    font-size: 1.25rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-header i {
+    color:#007BFF;
+    font-size: 1.2rem;
+}
+
+.appointment-card {
+    background-color: var(--primary-light);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.appointment-card:hover {
+    transform: translateX(5px);
+}
+
+.appointment-doctor {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+}
+
+.appointment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75rem 0;
+    font-size: 0.9rem;
+}
+
+.appointment-date {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.appointment-time {
+    color: var(--secondary);
+}
+
+.appointment-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.button i {
+    font-size: 0.9rem;
+}
+
+.button.primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.button.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.button.cancel {
+    background-color: var(--white);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.button.cancel:hover {
+    background-color: #fff5f5;
+}
+
+.button.secondary {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.button.secondary:hover {
+    background-color: var(--primary-light);
+}
+
+.view-all {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.no-appointments {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary);
+}
+
+.notification-item {
+    background-color: var(--light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.notification-item:hover {
+    background-color: #f0f4ff;
+}
+
+.notification-message {
+    margin-bottom: 0.5rem;
+}
+
+.notification-time {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.see-more-link {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.see-more-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.see-more-link a:hover {
+    text-decoration: underline;
+}
+
+.app-footer {
+    background: linear-gradient(135deg, var(--primary), #3a56cc);
+    color: var(--white);
+    padding: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.copyright {
+    color: white;
+}
+
+.notification-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.notification-preview:hover {
+    background-color: #f0f0f0;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-toggle {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.all-notifications {
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    border-top: none;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.delete-notification-form {
+    margin-left: 10px;
+}
+
+.delete-notification-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.delete-notification-btn:hover {
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+
+/* Animation for cards */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.dashboard-card:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .navbar div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .dashboard-content {
+        padding: 0 1.5rem;
+    }
+    
+    .appointment-actions,
+    .view-all {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-content {
+        padding: 0 1rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .dashboard-card {
+        padding: 1rem;
+    }
+}
+
+/* Loading skeleton */
+.skeleton {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}

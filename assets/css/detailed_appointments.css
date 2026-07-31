@@ -1,0 +1,123 @@
+:root {
+    --primary: #007BFF;
+    --primary-dark: #0069d9;
+    --secondary: #6c757d;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --danger: #dc3545;
+    --success: #28a745;
+    --warning: #ffc107;
+    --white: #ffffff;
+    --border-radius: 0.375rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.copyright {
+    color: white;
+}
+
+body {
+    font-family: 'Century Gothic', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light);
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+h4 {
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+p strong {
+    color: var(--dark);
+    min-width: 150px;
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+li {
+    background-color: var(--white);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+a:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Status indicators */
+.status-scheduled { color: var(--primary); }
+.status-completed { color: var(--success); }
+.status-canceled { color: var(--danger); }
+.status-checkedin { color: var(--warning); }
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    p strong {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    li {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
