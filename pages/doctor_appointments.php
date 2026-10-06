@@ -201,7 +201,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Appointments | Doval Santos Diagnostic Center</title>
+    <title>Doctor Appointments | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/doctor_appointments.css">
     <style>
@@ -308,7 +308,7 @@ try {
 <body>
 
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/doctor_dashboard.php">Dashboard</a>
         <a href="../pages/doctor_availability.php">Availability</a>
@@ -429,7 +429,7 @@ window.onclick = function(event) {
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center. All rights reserved.</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna. All rights reserved.</p>
     </div>
 </footer>
 

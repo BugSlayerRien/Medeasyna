@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Doval Santos Diagnostic Center</title>
+    <title>About Us | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/about.css">
 </head>
 <body>
 
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/index.php">Home</a>
         <a href="../pages/about.php">About</a>
@@ -23,10 +23,10 @@
 
         <section class="about-container">
             <h2>About Us</h2>
-            <p>Welcome to the <strong>Doval Santos Diagnostic Center</strong>, your trusted partner in healthcare diagnostics. Our center is dedicated to providing high-quality diagnostic services that help in early detection and accurate diagnosis of medical conditions.</p>
+            <p>Welcome to the <strong>MedEasyna</strong>, your trusted partner in healthcare diagnostics. Our center is dedicated to providing high-quality diagnostic services that help in early detection and accurate diagnosis of medical conditions.</p>
 
             <h3>Our Mission</h3>
-            <p>At Doval Santos Diagnostic Center, our mission is to provide reliable, fast, and accurate diagnostic services, offering our patients the best care possible. We use the latest technology and adhere to the highest standards to ensure that your health is in safe hands.</p>
+            <p>At MedEasyna, our mission is to provide reliable, fast, and accurate diagnostic services, offering our patients the best care possible. We use the latest technology and adhere to the highest standards to ensure that your health is in safe hands.</p>
 
             <h3>Our Services</h3>
             <p>We offer a wide range of diagnostic services, including but not limited to:</p>
@@ -53,7 +53,7 @@
 
     <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

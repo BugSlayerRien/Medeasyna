@@ -121,7 +121,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
 <body>
     
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/doctor_dashboard.php">Dashboard</a>
         <a href="../pages/doctor_availability.php">Availability</a>
@@ -256,7 +256,7 @@ unset($_SESSION['success_message'], $_SESSION['error_message']);
 </body>
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 </html>

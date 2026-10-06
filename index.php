@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>MedEasyna | Home</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
 
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
-        <a href="../pages/signin.php">Sign In</a>
-        <a href="../pages/signup.php">Sign Up</a>
+        <a href="pages/signin.php">Sign In</a>
+        <a href="pages/signup.php">Sign Up</a>
     </div>
 </div>
 
     
 
     <section class="hero">
-        <h2> Welcome to Doval Santos Diagnostic Center </h2>
+        <h2> Welcome to MedEasyna </h2>
         <p class="trusted"> Your trusted partner in healthcare services. </p>
     </section>
 
@@ -60,7 +60,7 @@
 
     <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

@@ -20,14 +20,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin Dashboard | Doval Santos Diagnostic Center</title>
+        <title>Admin Dashboard | MedEasyna</title>
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/admin_dashboard.css">
     </head>
     <body>
 
         <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
     <a href="admin_dashboard.php">Dashboard</a>
             <a href="manage_accounts.php">Manage Accounts</a>
@@ -66,7 +66,7 @@
         <!-- Footer -->
         <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

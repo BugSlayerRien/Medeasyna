@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $mail->Port       = 465;
 
                         // Recipients
-                        $mail->setFrom('gappirien@gmail.com', 'Doval Santos Diagnostic Center');
+                        $mail->setFrom('gappirien@gmail.com', 'MedEasyna');
                         $mail->addAddress($email);
 
                         // Content
@@ -199,7 +199,7 @@ HTML;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Window-Target" content="_top">
     <base target="_self">
-    <title>Forgot Password | Doval Santos Diagnostic Center</title>
+    <title>Forgot Password | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/forgot_password.css">
     <style>
@@ -228,7 +228,7 @@ HTML;
     <!-- Navigation Bar -->
     <header class="navbar">
         <div class="navbar-brand">
-            <h1>Doval Santos Diagnostic Center</h1>
+            <h1>MedEasyna</h1>
         </div>
         <nav class="navbar-menu">
             <a href="../pages/index.php">Home</a>
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

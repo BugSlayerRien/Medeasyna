@@ -97,7 +97,7 @@ $result = $stmt->get_result();
 <body>
     <header class="navbar">
         <div class="navbar-brand">
-            <h1>Doval Santos Diagnostic Center</h1>
+            <h1>MedEasyna</h1>
         </div>
         <nav class="navbar-menu">
             <a href="admin_dashboard.php">Dashboard</a>
@@ -162,7 +162,7 @@ $result = $stmt->get_result();
 
     <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

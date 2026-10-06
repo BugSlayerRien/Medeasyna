@@ -101,7 +101,7 @@ if (isset($_GET['token'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password | Doval Santos Diagnostic Center</title>
+    <title>Reset Password | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/signin.css">
     <base target="_self">
     <style>
@@ -163,7 +163,7 @@ if (isset($_GET['token'])) {
     <!-- Navigation Bar -->
     <header class="navbar">
         <div class="navbar-brand">
-            <h1>Doval Santos Diagnostic Center</h1>
+            <h1>MedEasyna</h1>
         </div>
         <nav class="navbar-menu">
             <a href="../pages/index.php">Home</a>
@@ -232,7 +232,7 @@ if (isset($_GET['token'])) {
                 <a href="../contact.php">Contact Us</a>
                 <a href="../faq.php">FAQ</a>
             </div>
-            <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center. All rights reserved.</p>
+            <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna. All rights reserved.</p>
         </div>
     </footer>
 

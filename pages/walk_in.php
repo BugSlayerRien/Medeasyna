@@ -149,7 +149,7 @@ $walkIns = $conn->query("
 </head>
 <body>
     <div class="navbar">
-        <h1>Doval Santos Diagnostic Center</h1>
+        <h1>MedEasyna</h1>
         <div>
             <a href="receptionist_dashboard.php">Dashboard</a>
             <a href="../pages/schedule_appointment.php">Schedule Appointment</a>
@@ -270,7 +270,7 @@ $walkIns = $conn->query("
 
     <footer class="app-footer">
         <div class="footer-content">
-            <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+            <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
         </div>
     </footer>
 
@@ -282,7 +282,7 @@ $walkIns = $conn->query("
         document.body.innerHTML = `
             <div style="padding:20px;font-family:Century Gothic">
                 <h1 style="color:#0d47a1;border-bottom:2px solid #0d47a1;padding-bottom:10px">
-                    Patient Credentials - Doval Santos Diagnostic Center
+                    Patient Credentials - MedEasyna
                 </h1>
                 ${printContent}
                 <p style="margin-top:30px;font-size:12px;text-align:center">

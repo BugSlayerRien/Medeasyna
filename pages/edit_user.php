@@ -61,7 +61,7 @@ if (isset($_GET['userID'])) {
 <body>
     <header class="navbar">
         <div class="navbar-brand">
-            <h1>Doval Santos Diagnostic Center</h1>
+            <h1>MedEasyna</h1>
         </div>
         <nav class="navbar-menu">
             <a href="admin_dashboard.php">Dashboard</a>
@@ -98,13 +98,13 @@ if (isset($_GET['userID'])) {
 
     <footer class="app-footer">
         <div class="footer-content">
-            <p>&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center. All rights reserved.</p>
+            <p>&copy; <?php echo date("Y"); ?> MedEasyna. All rights reserved.</p>
         </div>
     </footer>
     
     <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

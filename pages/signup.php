@@ -66,7 +66,7 @@ if (isset($_POST['signup'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doval Santos Diagnostic Center | Sign Up</title>
+    <title>MedEasyna | Sign Up</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/signup.css">
     <style>
@@ -95,7 +95,7 @@ if (isset($_POST['signup'])) {
 <body>
     
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/index.php">Home</a>
         <a href="../pages/about.php">About</a>
@@ -106,7 +106,7 @@ if (isset($_POST['signup'])) {
     <main class="main-content">
         <button class="back-btn" onclick="window.location.href='index.php'"></button>
         
-        <img src="../assets/img/dovalsantoslogo.png" alt="doval Logo" class="logo">
+        <img src="../assets/img/medeasyna-logo.png" alt="MedEasyna Logo" class="logo">
 
         <div class="login-container">
             <h2>Create Your Account</h2>
@@ -231,7 +231,7 @@ if (isset($_POST['signup'])) {
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

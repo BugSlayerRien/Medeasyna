@@ -79,14 +79,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | Doval Santos Diagnostic Center</title>
+    <title>Sign In | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/signin.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/index.php">Home</a>
         <a href="../pages/about.php">About</a>
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
     
     <div class="logo-container">
-                    <img src="../assets/img/dovalsantoslogo.png" alt="Doval Santos Diagnostic Center Logo" class="logo">
+                    <img src="../assets/img/medeasyna-logo.png" alt="MedEasyna Logo" class="logo">
                     </div>
                     
     <main class="auth-container">
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 

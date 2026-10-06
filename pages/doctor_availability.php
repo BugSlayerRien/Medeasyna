@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doctor Availability | Doval Santos Diagnostic Center</title>
+    <title>Doctor Availability | MedEasyna</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/doctor_availability.css">
     <style>
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="../pages/doctor_dashboard.php">Dashboard</a>
         <a href="../pages/doctor_availability.php">Availability</a>
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center. All rights reserved.</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna. All rights reserved.</p>
     </div>
 </footer>
 

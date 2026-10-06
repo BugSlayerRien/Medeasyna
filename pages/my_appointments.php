@@ -156,7 +156,7 @@ $result = $stmt->get_result();
 <body>
 
 <div class="navbar">
-    <h1>Doval Santos Diagnostic Center</h1>
+    <h1>MedEasyna</h1>
     <div>
         <a href="patient_dashboard.php">Dashboard</a>
         <a href="book_appointment.php">Schedule Appointment</a>
@@ -240,7 +240,7 @@ $result = $stmt->get_result();
 
 <footer class="app-footer">
     <div class="footer-content">
-        <p class="copyright">&copy; <?php echo date("Y"); ?> Doval Santos Diagnostic Center</p>
+        <p class="copyright">&copy; <?php echo date("Y"); ?> MedEasyna</p>
     </div>
 </footer>
 
